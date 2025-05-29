@@ -6,6 +6,7 @@ Warn if the WHOIS response is almost entirely redacted (e.g. Cloudflare / privac
 
 import argparse
 import sys
+import os
 from pprint import pprint
 import requests
 import whois
@@ -143,7 +144,8 @@ def main() -> None:
     parser.add_argument("domain", help="Domain name, e.g. example.com")
     args = parser.parse_args()
     domain = args.domain.strip()
-
+    print(f"\n── Domain: {domain} ──")
+    os.system("host " + domain)
     print(f"\n── DNS records for {domain} ──")
     dns_data = get_dns_records(domain)
     if dns_data:
