@@ -1,0 +1,7 @@
+argparse
+requests
+json
+python-whois
+colorama
+selenium
+bs4 
